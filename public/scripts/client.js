@@ -44,6 +44,7 @@ const renderTweets = (tweets) => {
 
 const createTweetElement = (obj) => {
   const time = timeago.format(obj.created_at, new Date());
+  console.log(obj);
   const $tweet = 
   `<article>
     <header class="tweetHeader">
@@ -65,10 +66,26 @@ const createTweetElement = (obj) => {
   `;
   return $tweet;
 }
+$(() => {
+  $("#addTweet").on("submit", (evt) => {
+    evt.preventDefault();
+    const val = $(evt.target).serialize();
+    console.log("evt-->",val)
+    $.post("/tweets", val).then((data) => {
+      console.log(data);
+      $.get("/tweets", val).then((data) => {
+        console.log(data);
+        renderTweets(data);
+      })
+      ;
+    });
+  });
+});
+
 
 // const $tweet = createTweetElement(tweetData);
 
 // Test / driver code (temporary)
 // console.log($tweet); // to see what it looks like
 // $(document).ready()
-renderTweets(data);
+// renderTweets(data);
