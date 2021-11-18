@@ -1,0 +1,43 @@
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 120px;
+  width: 100%;
+  background-color: #4056A1;
+  color: #FFFFFF;
+  padding: .8em 1.5em;
+  position: fixed;
+  top: 0;
+}
+
+.tweeter{
+  display: flex;
+  font-family: "Bungee";
+  font-size: 40px;
+}
+
+.rightcontent {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  /* align-self: flex-end;
+  justify-content: flex-end; */
+}
+
+ .newtweet {
+  display: flex;
+  order: 1; 
+  justify-content: flex-end; 
+ }
+
+.icon {
+  display: flex;
+  order: 0; 
+  justify-content: center;
+} 
+
+i {
+  color: red;
+}

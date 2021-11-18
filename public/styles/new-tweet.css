@@ -1,0 +1,25 @@
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Bungee";
+  margin-top: 10px;
+}
+
+.tweetButton {
+  background-color: #4056A1;
+  color: white;
+}
+
+textarea {
+  border: none;
+  outline: none;
+  background-color: #f4f1ec;
+  border-bottom: 1px solid grey;
+}

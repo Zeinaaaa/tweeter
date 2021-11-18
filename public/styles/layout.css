@@ -18,8 +18,59 @@ body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
+  font-family: "Source Sans Pro", "sans-serif";
 }
 
+.maincontainer {
+  width: 100%;
+  background-color: #f4f1ec;
+  display: flex;
+  justify-content: center;
+}
+.container {
+  width: 80%;
+  background-color: #f4f1ec;
+}
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+ .tweetHeader {
+   font-size: large;
+ }
+
+ article {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   margin-top: 10px;
+   border: 3px solid black;
+   margin: 3px;
+   padding: 5px;
+ }
+
+ article:hover {
+  /* box-shadow: 0 3px 20px darkgray; */
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+ }
+
+ article span {
+   margin-top: 10px;
+   border: none;
+   outline: none;
+   font-size: large;
+ }
+
+ .tweetFooter {
+   border-top: 3px solid black;
+   font-size: 15px;
+   padding-top: 0px;
+   font-family: monospace;
+ }
+
+ article i {
+   color: cornflowerblue;
+ }
+ article i:hover {
+   color: gray;
+ }
