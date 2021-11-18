@@ -40,7 +40,14 @@ const renderTweets = (tweets) => {
   for (const tweet of tweets) {
     $(() => $('.container').append(createTweetElement(tweet))); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
   }
-}
+};
+
+const escape = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
 
 const createTweetElement = (obj) => {
   const time = timeago.format(obj.created_at, new Date());
@@ -51,7 +58,7 @@ const createTweetElement = (obj) => {
       ${obj.user.name}
     </header>
     <span>
-      ${obj.content.text}
+      ${escape(obj.content.text)}
     </span>
     <footer class="tweetFooter">
       <p>${time}</p>
@@ -68,9 +75,16 @@ const createTweetElement = (obj) => {
 $(() => {
   $("#addTweet").on("submit", (evt) => {
     evt.preventDefault();
-    const val = $(evt.target).serialize();
-    $.post("/tweets", val).then(() => {
-    });
+    let val = $(evt.target).serialize();
+    // $("#tweet-text").empty();
+    // if (!val) {
+    //   alert("you should add some text before tweeting");
+    // } else if (val.length > 140) {
+    //   alert("your tweet should be under 141 character");
+    // } else {
+      $.post("/tweets", val).then(() => {
+      })
+    // }
     const loadtweets = $.get("/tweets", val).then((data) => {
       renderTweets(data);
     });
