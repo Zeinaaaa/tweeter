@@ -43,32 +43,34 @@
 
       </div>
     </nav>
-    <header class="header">
-      <div>
-          <img src="/images/profile-hex.png"> 
-        </div>
-        <h2>Your Name</h2>
-    </header>
-
-    <!-- Page-specific (main) content here -->
-    <div class="maincontainer">
-      <main class="container">
-        <section class="new-tweet">
-          <div class="errorMessage">
-            <div class="error">Your tweet has to be less than 140 character.</div>
+    <div id="mainDiv">
+      <header class="header">
+        <div>
+            <img src="/images/profile-hex.png"> 
           </div>
-          <form id="addTweet">
-            <!-- <method="post" action="/tweets"> -->
-            <!-- <label for="tweet-text">What are you humming about?</label> -->
-            <textarea  placeholder="What are you humming about?" name="text" id="tweet-text"></textarea>
-            <footer>
-              <button class="tweetButton" type="submit">Tweet</button>
-              <output name="counter" class="counter" for="tweet-text">140</output>
-            </footer>
-          </form>
-        </section>
-        <section id="tweetList"></section>
-      </main>
+          <h2>Your Name</h2>
+      </header>
+
+      <!-- Page-specific (main) content here -->
+      <div class="maincontainer">
+        <main class="container">
+          <section class="new-tweet">
+            <div class="errorMessage">
+              <div class="error">Your tweet has to be less than 140 character.</div>
+            </div>
+            <form id="addTweet">
+              <!-- <method="post" action="/tweets"> -->
+              <!-- <label for="tweet-text">What are you humming about?</label> -->
+              <textarea  placeholder="What are you humming about?" name="text" id="tweet-text"></textarea>
+              <footer>
+                <button class="tweetButton" type="submit">Tweet</button>
+                <output name="counter" class="counter" for="tweet-text">140</output>
+              </footer>
+            </form>
+          </section>
+          <section id="tweetList"></section>
+        </main>
+      </div>
     </div>
   </body>
 </html>

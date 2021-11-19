@@ -95,3 +95,12 @@ body {
 	background-image: url('https://i.imgur.com/GnyDvKN.png')
   
  }
+
+@media only screen and (min-width: 1024px) {
+  #mainDiv {
+  display: flex;
+  margin-top: 160px;
+  margin-left: 50px;
+  };
+};
+
