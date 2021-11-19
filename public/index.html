@@ -54,6 +54,9 @@
     <div class="maincontainer">
       <main class="container">
         <section class="new-tweet">
+          <div class="errorMessage">
+            <div class="error">Your tweet has to be less than 140 character.</div>
+          </div>
           <form id="addTweet">
             <!-- <method="post" action="/tweets"> -->
             <!-- <label for="tweet-text">What are you humming about?</label> -->
@@ -64,6 +67,7 @@
             </footer>
           </form>
         </section>
+        <section id="tweetList"></section>
       </main>
     </div>
   </body>

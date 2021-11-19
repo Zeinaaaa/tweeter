@@ -37,8 +37,9 @@
 // ]
 
 const renderTweets = (tweets) => {
+  // $(".container").empty();
   for (const tweet of tweets) {
-    $(() => $('.container').append(createTweetElement(tweet))); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
+    $(() => $('#tweetList').prepend(createTweetElement(tweet))); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
   }
 };
 
@@ -72,25 +73,50 @@ const createTweetElement = (obj) => {
   `;
   return $tweet;
 }
+
+
+
+
 $(() => {
+  const $tweetText = $("#tweet-text"); 
+  $(".errorMessage").hide();
   $("#addTweet").on("submit", (evt) => {
     evt.preventDefault();
+    
     let val = $(evt.target).serialize();
-    // $("#tweet-text").empty();
-    // if (!val) {
-    //   alert("you should add some text before tweeting");
-    // } else if (val.length > 140) {
-    //   alert("your tweet should be under 141 character");
-    // } else {
-      $.post("/tweets", val).then(() => {
-      })
-    // }
-    const loadtweets = $.get("/tweets", val).then((data) => {
-      renderTweets(data);
-    });
-    loadtweets;
+    console.log("val:", val);
+    
+    if (evt.target[0].value.length === 0) {
+      console.log("length", evt.target[0].value.length)
+      $('.error').text(
+        `You need to add a text to submit a tweet.`
+        ); 
+        $(".errorMessage").slideDown("slow");
+
+        console.log(evt.target[0].value)
+      } else if ($tweetText.val().length > 140) {
+        $('.error').text(
+          `Your text should be less than 140 characters.`
+          ); 
+          $(".errorMessage").slideDown("slow");
+          $("#tweet-text").val("");
+      } else {
+        $.post("/tweets", val).then(() => {
+          $("#tweet-text").empty();
+          const loadtweets = $.get("/tweets", val).then((data) => {
+            renderTweets(data);
+          });
+          loadtweets;
+          $("#tweet-text").val("");
+          $(".errorMessage").empty();
+        })
+      }
+      // $("#tweet-text").empty();
+      
   });
 });
+
+
 
 
 // const $tweet = createTweetElement(tweetData);

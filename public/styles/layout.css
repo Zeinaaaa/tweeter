@@ -78,3 +78,20 @@ body {
  #addTweet {
 
  }
+ .errorMessage {
+   width: 100%;
+ }
+
+ .error {
+  width: 100%;
+  border: 1px solid;
+	margin: 10px auto;
+	padding: 15px 10px 15px 50px;
+	background-repeat: no-repeat;
+	background-position: 10px center;
+	max-width: 460px;
+  color: #D8000C;
+	background-color: #FFBABA;
+	background-image: url('https://i.imgur.com/GnyDvKN.png')
+  
+ }
