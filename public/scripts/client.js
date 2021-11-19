@@ -55,8 +55,13 @@ const createTweetElement = (obj) => {
   const $tweet = 
   `<article>
     <header class="tweetHeader">
-      <i class="far fa-user"></i>
-      ${obj.user.name}
+      <div class="headerRight">
+        <i class="far fa-user"></i>
+        ${obj.user.name}
+      </div>
+      <div class="headerLift">
+        ${obj.user.handle}
+      </div>
     </header>
     <span>
       ${escape(obj.content.text)}
@@ -65,7 +70,7 @@ const createTweetElement = (obj) => {
       <p>${time}</p>
       <p>
       <i class="fas fa-flag"></i>
-      <i class="fas fa-spinner"></i>
+      <i class="fa-solid fa-arrows-rotate"></i>
       <i class="fas fa-heart"></i>
       </p>
     </footer> 

@@ -23,3 +23,12 @@ textarea {
   background-color: #f4f1ec;
   border-bottom: 1px solid grey;
 }
+
+.tweetHeader {
+  display: flex;
+  justify-content: space-between;
+}
+
+.headerLift{
+  color: rgb(160, 160, 160);
+}
