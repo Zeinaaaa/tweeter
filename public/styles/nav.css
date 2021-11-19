@@ -41,3 +41,9 @@
 i {
   color: red;
 }
+
+.to-top.active {
+  bottom:32px;
+  pointer-events: auto;
+  opacity:1;
+}

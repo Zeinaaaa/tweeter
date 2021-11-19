@@ -35,7 +35,15 @@
 //     "created_at": 1461113959088
 //   }
 // ]
+const toTop = document.querySelector(".to-top");
 
+window.addEventListener("click", () => {
+  if (window.pageYOffset > 100) {
+    toTop.classList.add("active");
+  } else {
+    toTop.classList.remove("active");
+  }
+})
 const renderTweets = (tweets) => {
   // $(".container").empty();
   for (const tweet of tweets) {
