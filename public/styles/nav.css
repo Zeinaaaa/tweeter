@@ -22,11 +22,9 @@
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
-  /* align-self: flex-end;
-  justify-content: flex-end; */
 }
 
- .newtweet {
+.newtweet {
   display: flex;
   order: 1; 
   justify-content: flex-end; 
@@ -37,7 +35,7 @@
   order: 0; 
   justify-content: center;
 } 
-
+/* the icon is red */
 i {
   color: red;
 }

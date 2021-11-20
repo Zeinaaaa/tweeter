@@ -1,8 +1,6 @@
 //Adding the character counter.
 $(document).ready(function() {
-  console.log("ready");
   $("#tweet-text").keyup( function() {
-    console.log(this.value.length);
     let x= 140 - this.value.length;
     $(".counter").text(x);
     if (x < 0) {

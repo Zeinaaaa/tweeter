@@ -32,10 +32,6 @@ body {
   width: 80%;
   background-color: #f4f1ec;
 }
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
-
  .tweetHeader {
    font-size: large;
  }
@@ -51,7 +47,6 @@ body {
  }
 
  article:hover {
-  /* box-shadow: 0 3px 20px darkgray; */
   box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
  }
 
@@ -72,13 +67,11 @@ body {
  article i {
    color: cornflowerblue;
  }
+ 
  article i:hover {
    color: gray;
  }
 
- #addTweet {
-
- }
  .errorMessage {
    width: 100%;
  }
@@ -96,12 +89,23 @@ body {
 	background-image: url('https://i.imgur.com/GnyDvKN.png')
   
  }
-
+/* a media queury suitable for desktops as the original design is for mobile phones and tablets. */
 @media only screen and (min-width: 1024px) {
+  .maincontainer {
+    width: 200% ;
+    margin-left: 50px;
+  
+  }
   #mainDiv {
   display: flex;
   margin-top: 160px;
   margin-left: 50px;
   };
 };
+
+@media only screen and (max-width: 667px) {
+  .container {
+    width: 80%;
+  }
+}
 
