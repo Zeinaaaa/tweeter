@@ -4,11 +4,10 @@ Tweeter is a simple front end single-page AJAX-based twitter clone that is built
 
 ## Final Product
 
-!["screenshot of the edit page"](https://github.com/Zeinaaaa/tinyapp/blob/master/docs/TinyApp-Edit%20feature.png)
+!["screenshot of Tweeter desktop layout"](https://github.com/Zeinaaaa/tweeter/blob/master/docs/Tweeter%20Desktop%20view.png)
 
-!["screenshot of the urls page"](https://github.com/Zeinaaaa/tinyapp/blob/master/docs/TinyApp-URLspage.png)
+!["screenshot of Tweeter mobile and Ipad layout"](https://github.com/Zeinaaaa/tweeter/blob/master/docs/Tweeter%20mobile%20view.png)
 
-!["screenshot of the create ShortUrl page"](https://github.com/Zeinaaaa/tinyapp/blob/master/docs/TinyApp-createShortURL.png)
 
 ## Dependencies
 
