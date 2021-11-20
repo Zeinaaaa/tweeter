@@ -48,7 +48,7 @@ $(() => {
   $(".errorMessage").hide();
   $("#addTweet").on("submit", (evt) => {
     evt.preventDefault();//to prevent auto submittion
-    
+    $(".errorMessage").hide();
     let val = $(evt.target).serialize();
     //error message if no input in the text box.
     if (evt.target[0].value.length === 0) {
@@ -70,7 +70,6 @@ $(() => {
           renderTweets(data);
           loadtweets;
           $("#tweet-text").val("");
-          $(".errorMessage").empty();//remove the error message after fixing the tweet.
         });
       })
     }
