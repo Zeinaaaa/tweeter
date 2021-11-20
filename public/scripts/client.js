@@ -39,17 +39,21 @@ const toTop = document.querySelector(".to-top");
 
 window.addEventListener("click", () => {
   if (window.pageYOffset > 100) {
-    toTop.classList.add("active");
-  } else {
-    toTop.classList.remove("active");
-  }
+    toTop.add("active");
+  } 
+  // else {
+  //   toTop.classList.remove("active");
+  // }
 })
+
+
 const renderTweets = (tweets) => {
   // $(".container").empty();
   for (const tweet of tweets) {
     $(() => $('#tweetList').prepend(createTweetElement(tweet))); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
   }
 };
+
 
 const escape = function (str) {
   let div = document.createElement("div");
