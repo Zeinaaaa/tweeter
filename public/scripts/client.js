@@ -1,10 +1,18 @@
+const tweetListPrepend = (tweet) => {
+  $(() => $('#tweetList').prepend(createTweetElement(tweet)));
+}
+
 // a function to loob through the data;
 const renderTweets = (tweets) => {
+  //empty the text box before rendering.
+  $("#tweet-text").empty();
   for (const tweet of tweets) {
-    $(() => $('#tweetList').prepend(createTweetElement(tweet))); 
+    tweetListPrepend(tweet); 
     // to add it to the page so we can make sure it's got all the right elements, classes, etc.
   }
 };
+
+const loadtweets = () => {$.get("/tweets", renderTweets)}
 
 
 const escape = function (str) {
@@ -45,32 +53,43 @@ const createTweetElement = (obj) => {
 
 //a ready jquery function to make sure the html is loaded first before the js execution.
 $(() => {
+
+  // to load the old tweets first.
+  loadtweets();
+
   $(".errorMessage").hide();
   $("#addTweet").on("submit", (evt) => {
     evt.preventDefault();//to prevent auto submittion
-    $(".errorMessage").hide();
+    // $(".errorMessage").hide();
     let val = $(evt.target).serialize();
+
+
+
     //error message if no input in the text box.
     if (evt.target[0].value.length === 0) {
       $('.error').text(
         `You need to add a text to submit a tweet.`
         ); 
         $(".errorMessage").slideDown("slow");//adding the slide down effect
-    //error message if characters count is more than 140;
+        //error message if characters count is more than 140;
+        //to make the error message disappear after 3 seconds.
+
+        setTimeout(() => {$(".errorMessage").hide()}, 3000);
     } else if (evt.target[0].value.length > 140) {
      $('.error').text(
       `Your text should be less than 140 characters.`
        ); 
        $(".errorMessage").slideDown("slow");
        $("#tweet-text").val("");//clearing the input box;
+       //to make the error message disappear after 3 seconds.
+       setTimeout(() => {$(".errorMessage").hide()}, 3000);
+
     } else {
       $.post("/tweets", val).then(() => {
-        $("#tweet-text").empty();
-        const loadtweets = $.get("/tweets", val).then((data) => {
-          renderTweets(data);
-          loadtweets;
+        //to fix the continuous looping problem.
+          $("#tweetList").empty();
+          loadtweets();
           $("#tweet-text").val("");
-        });
       })
     }
       
